@@ -1,0 +1,28 @@
+{
+  "presets": [ "env", "react" ],
+  "plugins": [
+    "react-hot-loader/babel",
+    "react-require",
+    "inline-react-svg",
+    "babel-plugin-styled-components",
+    "transform-decorators-legacy",
+    ["module-resolver", {
+      "root": ".",
+      "alias": {
+        "~": "./src"
+      }
+    }]
+  ],
+  "env": {
+    "development": {
+      "plugins": [
+        "transform-react-jsx-self",
+        "transform-react-jsx-source"
+      ]
+    },
+    "production": {
+      "presets": [ "react-optimize" ],
+      "plugins": [ "transform-remove-console" ]
+    }
+  }
+}
