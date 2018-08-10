@@ -48,6 +48,7 @@ module.exports = {
         'Access-Control-Allow-Methods': 'GET, PUT, POST, DELETE, PATCH, OPTIONS',
         'Access-Control-Allow-Headers': 'X-Requested-With, Content-Type, Authorization'
       }
+      config.hot = true
       return config
     }
   },

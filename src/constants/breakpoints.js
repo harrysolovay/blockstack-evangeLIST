@@ -1,0 +1,5 @@
+export const SECTION_MAX_WIDTH = '1224px'
+export const PHONE_MAX_WIDTH = '559px'
+export const TABLET_MIN_WIDTH = '560px'
+export const TABLET_MAX_WIDTH = '859px'
+export const DESKTOP_MIN_WIDTH = '860px'

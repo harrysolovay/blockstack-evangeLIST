@@ -1,17 +1,19 @@
 {
   "presets": [ "env", "react" ],
   "plugins": [
-    "react-hot-loader/babel",
-    "react-require",
-    "inline-react-svg",
-    "babel-plugin-styled-components",
-    "transform-decorators-legacy",
+    "syntax-dynamic-import",
     ["module-resolver", {
       "root": ".",
       "alias": {
         "~": "./src"
       }
-    }]
+    }],
+    "react-loadable/babel",
+    "react-require",
+    "inline-react-svg",
+    "babel-plugin-styled-components",
+    "transform-decorators-legacy",
+    "react-hot-loader/babel"
   ],
   "env": {
     "development": {

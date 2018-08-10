@@ -1,0 +1,7 @@
+import Container from './styles'
+
+export default () => (
+  <Container>
+    FourOFour
+  </Container>
+)
