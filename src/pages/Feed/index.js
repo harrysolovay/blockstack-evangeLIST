@@ -1,7 +1,10 @@
+import { Page } from '~/components'
 import Container from './styles'
 
 export default () => (
-  <Container>
-    Feed
-  </Container>
+  <Page>
+    <Container>
+      Feed
+    </Container>
+  </Page>
 )

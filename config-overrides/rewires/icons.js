@@ -5,7 +5,7 @@ module.exports = (config) => {
   config.plugins = (config.plugins || []).concat([
     new FaviconsPlugin({
       logo: `${ rootPath }/src/assets/images/icon.png`,
-      title: 'Blockstack Evangelist Lab',
+      title: 'Blockstack EvangeLIST',
     })
   ])
   return config

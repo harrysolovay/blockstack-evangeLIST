@@ -1,7 +1,10 @@
+import { Page } from '~/components'
 import Container from './styles'
 
 export default () => (
-  <Container>
-    FourOFour
-  </Container>
+  <Page>
+    <Container>
+      FourOFour
+    </Container>
+  </Page>
 )
