@@ -42,14 +42,23 @@ module.exports = {
 
   devServer: (configFunction) => {
     return (proxy, allowedHost) => {
+      
       let config = configFunction(proxy, allowedHost)
+      
       config.headers = {
         'Access-Control-Allow-Origin': '*',
         'Access-Control-Allow-Methods': 'GET, PUT, POST, DELETE, PATCH, OPTIONS',
         'Access-Control-Allow-Headers': 'X-Requested-With, Content-Type, Authorization'
       }
+
+      config.historyApiFallback = {
+        disableDotRule: true,
+      }
+
       config.hot = true
+
       return config
+
     }
   },
 
