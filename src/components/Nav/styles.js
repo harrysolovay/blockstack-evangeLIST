@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { DEFAULT_BOX_SHADOW_COLOR } from '~/constants'
 
 export default styled.nav`
 
@@ -8,15 +7,15 @@ export default styled.nav`
   right: 0px;
   left: 0px;
   height: 60px;
-  box-shadow: 0px 0px 1px ${ DEFAULT_BOX_SHADOW_COLOR };
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, .5);
   z-index: 1000;
   background-color: #fff;
 
   > div {
+    height: 100%;
     display: flex;
     flex: 1;
     flex-direction: row;
-    align-items: center;
     @media screen and (max-width: 600px) {
       justify-content: space-between;
     }
@@ -28,8 +27,6 @@ export default styled.nav`
     align-items: center;
     padding-right: 24px;
     padding-left: 24px;
-    font-size: 1em;
-    font-weight: 400;
     color: #3a3a3a;
 
     &:hover {

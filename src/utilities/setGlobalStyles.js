@@ -1,10 +1,5 @@
 import { injectGlobal } from 'styled-components'
-import {
-  DEFAULT_FONT_FAMILIES,
-  BASE_FONT_SIZE,
-  DEFAULT_FONT_WEIGHT,
-  colors
-} from '~/constants'
+import { colors } from '~/constants'
 
 export default injectGlobal`
 
@@ -30,8 +25,8 @@ form, label, input, textarea, datalist, option, select, button
   top : 0px; right: 0px; bottom: 0px; left: 0px;
 
   box-sizing: border-box;
-  width: inherit;
-  height: inherit;
+  width: initial;
+  height: initial;
   padding: 0px;
   border-style: solid;
   border-width: 0px;
@@ -66,22 +61,48 @@ form, label, input, textarea, datalist, option, select, button
   }
 
   ::selection {
-    background-color: ${ colors.BLUE };
+    background-color: ${ colors.LIGHT_BLUE };
   }
 
   body {
-    font-family: ${ DEFAULT_FONT_FAMILIES.join(', ') };
-    font-size: ${ BASE_FONT_SIZE };
-    font-weight: ${ DEFAULT_FONT_WEIGHT };
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 200;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: left;
-    color: ${ colors.DEFAULT_TEXT_COLOR };
-    border-color: ${ colors.DEFAULT_BORDER_COLOR };
+    color: #000;
+  }
+
+  hr {
+    width: 100%;
+    height: 1px;
+    background-color: ${ colors.LIGHT_GRAY };
   }
 
   a, button {
     cursor: pointer;
+  }
+
+  h1 {
+    font-size: 32px;
+    line-height: 48px;
+  }
+
+  h2 {
+    font-size: 27px;
+    line-height: 40px;
+  }
+
+  h3 {
+    font-size: 22px;
+    line-height: 33px;
+  }
+
+  h4 {
+    font-size: 18px;
+    line-height: 27px;
   }
 
 `

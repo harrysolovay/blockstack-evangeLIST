@@ -7,7 +7,7 @@ import BlockstackLogo from '~/assets/images/blockstack-logo.svg'
 
 export default () => (
   <Subscribe to={[ AuthStore ]}>
-    {({ state: { loggedIn }, logIn, refresh }) => (
+    {({ state: { loggedIn }, logIn }) => (
       <Container>
         <div>
 
@@ -24,12 +24,12 @@ export default () => (
           <NavLink
             exact
             to='/'
-            children='Feed'
+            children='feed'
           />
 
           <NavLink
             to='/evangelists'
-            children='Evangelists'
+            children='evangelists'
           />
 
           <div className='separation' />
@@ -39,12 +39,12 @@ export default () => (
               ? (
                 <NavLink
                   to='/account'
-                  children='Account'
+                  children='account'
                 />
               ) : (
                 <button
                   onClick={ logIn }
-                  children='Log In'
+                  children='log in'
                   className='active'
                 />
               )

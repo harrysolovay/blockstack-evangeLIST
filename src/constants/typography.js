@@ -1,9 +1,4 @@
-export const DEFAULT_FONT_FAMILIES = [
-  'Helvetica Neue',
-  'Helvetica',
-  'Arial',
-  'sans-serif'
-]
+export const DEFAULT_FONT_FAMILIES = `'Questrial', sans-serif`
 export const BLOCKSTACK_FONT = 'Plex, monospace'
 
 export const DEFAULT_FONT_WEIGHT = '200'

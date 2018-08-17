@@ -26,6 +26,10 @@ export default class AuthProvider extends Container {
     this.refresh()
   }
 
+  setLoading = () => {
+    this.setState(state => ({ ...state, loading: true }))
+  }
+
   info = ({
     username,
     profile: {
@@ -35,7 +39,7 @@ export default class AuthProvider extends Container {
           contentUrl: avatar
         }
       },
-      description
+      description,
     }
   } = loadUserData()) => ({
     username,
@@ -46,16 +50,13 @@ export default class AuthProvider extends Container {
   })
 
   logIn = () => {
-    this.setState(state => ({ ...state, loading: true }))
+    this.setLoading()
     const origin = window.location.origin
     redirectToSignIn(origin, `${ origin }/manifest.json`, [ 'store_write', 'publish_data' ])
   }
 
-  redirectToLanding = () => {
-    window.location = `${ window.location.protocol }//${ window.location.host }`
-  }
-
   refresh = async () => {
+    this.setLoading()
     if(isSignInPending()) {
       try {
         const user = await handlePendingSignIn()
@@ -78,7 +79,7 @@ export default class AuthProvider extends Container {
         }))
       } else {
         if(window.location.pathname.indexOf('account') >= 0) {
-          this.redirectToLanding()
+          window.location = `${ window.location.protocol }//${ window.location.host }`
         }
         this.setState(state => ({
           ...state,
@@ -96,7 +97,6 @@ export default class AuthProvider extends Container {
       DEFAULT_STATE,
       loading: false
     }))
-    this.redirectToLanding()
   }
 
 }

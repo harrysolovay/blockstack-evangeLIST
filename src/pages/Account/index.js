@@ -2,6 +2,7 @@ import { Subscribe } from 'unstated'
 import { AuthStore } from '~/stores'
 import Container from './styles'
 import { Page } from '~/components'
+import { ProfileForm } from '~/components'
 
 export default () => (
   <Subscribe to={[ AuthStore ]}>
@@ -17,30 +18,35 @@ export default () => (
       <Page>
         <Container>
 
-          <img
-            alt='profile'
-            src={ avatar }
+          <div
+            className='avatar'
+            style={{ backgroundImage: `url(${ avatar })` }}
           />
 
-          <span
-            children={ username }
-            className='username'
-          />
-
-          <span
-            children={ name }
-            className='name'
-          />
-
-          <span
-            children={ description }
-            className='description'
-          />
+          <div className='details'>
+            <h2
+              children={ name }
+              className='name'
+            />
+            <h3
+              children={ username }
+              className='username'
+            />
+            <p
+              children={ description }
+              className='description'
+            />
+          </div>
 
           <button
             onClick={ logOut }
             children='log out'
+            className='log-out'
           />
+
+          <hr />
+
+          <ProfileForm />
 
         </Container>
       </Page>

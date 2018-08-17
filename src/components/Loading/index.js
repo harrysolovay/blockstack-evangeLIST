@@ -1,15 +1,30 @@
-export default (props) => {
-  if(props.isLoading) {
-    if(props.timedOut) {
-      return <div>loader timed out</div>
-    } else if(props.pastDelay) {
-      return <div>Loading...</div>
-    } else {
-      return null
+import Container from './styles'
+import LoadingIcon from '~/assets/images/spinner.svg'
+
+export default ({
+  fullScreen,
+  timedOut,
+  error,
+  retry,
+  message,
+}) => (
+  <Container { ...{ fullScreen }}>
+    {
+      timedOut || error
+        ? (
+          <div>
+            <span children={ `Failed to load. ` } />
+            <button
+              children='Click here to retry.'
+              onClick={ retry }
+            />
+          </div>
+        ) : (
+          <div>
+            <LoadingIcon />
+            { message && <span children={ message } /> }
+          </div>
+        )
     }
-  } else if(props.error) {
-    return <div>Component failed to load</div>
-  } else {
-    return null
-  }
-}
+  </Container>
+)
